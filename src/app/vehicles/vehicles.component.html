@@ -1,0 +1,39 @@
+<form [formGroup]="vehicleForm" (ngSubmit)="newCar()">
+    <div class="mb-3">
+      <label for="plate" class="form-label">Rendszám</label>
+      <input type="text" class="form-control" id="plate" formControlName="plate">
+    </div>
+    <div class="mb-3">
+        <label for="brand" class="form-label">Márka</label>
+        <input type="text" class="form-control" id="brand" formControlName="brand">
+    </div>
+    <div class="mb-3">
+        <label for="price" class="form-label">Ár</label>
+        <input type="text" class="form-control" id="price"formControlName="price">
+    </div>
+    <div class="mb-3">
+        <label for="year" class="form-label">Év</label>
+        <input type="text" class="form-control" id="year" formControlName="year">
+    </div>
+    <div class="mb-3">
+        <label for="sold" class="form-label">Eladva</label>
+        <input type="text" class="form-control" id="sold" formControlName="sold">
+    </div>
+    <button type="submit" class="btn btn-primary">Új autó hozzáadása</button>
+  </form>
+<table  class="table">
+    <tr>
+        <th>Rendszám</th>
+        <th>Márka</th>
+        <th>Ár</th>
+        <th>Év</th>
+        <th>Eladva</th>
+    </tr>
+    <tr *ngFor="let vehicle of vehicleList">
+        <td>{{vehicle.plate}}</td>
+        <td>{{vehicle.brand}}</td>
+        <td>{{vehicle.price}}</td>
+        <td>{{vehicle.year}}</td>
+        <td>{{vehicle.sold}}</td>
+    </tr>
+</table>
